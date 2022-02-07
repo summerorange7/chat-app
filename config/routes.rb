@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'messages/index'
- root to: "messages#index" 
+ root to: "rooms#index" #ルートパスはここへ行くよ:rooms_controllerのindexアクション
  resources :users, only: [:edit, :update]
- #ルートパスはここへ行くよ:messages_controllerのindexアクション
+ resources :rooms, only: [:new, :create]#roomsコントローラーへGo!・ただしnewとcreateの２アクションのみ
+ 
 end
