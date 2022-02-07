@@ -19,7 +19,6 @@
       <select name="room[user_ids][]">
           <option value="">チャットするユーザーを選択してください</option>
           <% User.where.not(id: current_user.id).each do |user| %><!--userモデルからcurrent_user_id以外のユーザーを順番に全員出して-->
-            <option><%= user.name %></option>
             <option value=<%= user.id %>><%= user.name %></option>
           <% end %>
         </select>
